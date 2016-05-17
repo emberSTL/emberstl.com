@@ -1,0 +1,33 @@
+header.nav-bar {
+  background-color: $theme-color;
+  padding: 1em 0;
+
+  .logo a, .logo a:visited {
+    color: $logo-em-color;
+    line-height: 1em;
+    text-decoration: none;
+    span {
+      color: $background-color;
+      margin-right:.2em;
+    }
+  }
+
+  nav {
+    a, a:visited {
+      font-weight: bold;
+      text-transform: uppercase;
+      color: $background-color;
+      text-decoration: none;
+      margin-left: 10px;
+    }
+    a:hover, a:active {
+      text-decoration: underline;
+    }
+  }
+
+  > div {
+    display:flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+}

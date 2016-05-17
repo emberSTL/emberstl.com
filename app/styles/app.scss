@@ -1,8 +1,4 @@
-// @import 'ember-freestyle';
-
-@import url(https://fonts.googleapis.com/css?family=Maven+Pro:700|Pacifico);
-$theme-color: #E34C32;
-$font: 'Helvetica Neue', Helvetica, Arial, Sans-Serif;
+@import 'variables';
 
 html, body {
   padding: 0;
@@ -10,11 +6,11 @@ html, body {
 }
 
 html {
-  background: #f6eae7;
+  background: $background-color;
   font-family: $font;
   font-size: 14px;
   line-height: 1.4em;
-  color: #444444;
+  color: $text-color;
   font-weight: normal;
   -webkit-font-smoothing: antialiased;
 }
@@ -40,99 +36,22 @@ p {
   margin: 1em 0;
 }
 
+.contain {
+  max-width: $max-width;
+  margin: 0 auto;
+}
 
+section.page {
+  padding: 2em 0;
 
-////////////
-.page-index {
-  margin:0;
-  display: flex;
-  flex-flow: column;
-  height: 100vh;
-  text-align: center;
-
-  background-image: url(/assets/images/arch.png);
-  background-repeat: no-repeat;
-  background-size: auto 60%;
-  background-position: bottom;
-
-  h1.logo {
-    padding: 2em 0 .25em;
-    color: #612116;
-    line-height: 1em;
-    font-size: 4.5em;
-    span {
-      color: $theme-color;
-      margin-right:.2em;
-    }
-  }
-
-  nav {
-    z-index: 1;
-    display: flex;
-    justify-content: space-between;
-    margin: 0 auto;
-    width: 92%;
-    max-width: 375px;
-
-    a, a:visited {
-      font-weight: bold;
-      text-transform: uppercase;
-      color: $theme-color;
-      text-decoration: none;      
-    }
-    a:hover, a:active {
-      text-decoration: underline;
-    }
-  }
-
-  .clouds {
-    height: 100vh;
-    width: 100vw;
-    position: absolute;
-    top: 0;
-    left: 0;
-    overflow: hidden;
-  
-    .cloud1 {
-      position: absolute;
-      top: 27%;
-      animation: cloudOne 60s cubic-bezier(.28,.54,.69,.38) infinite;
-      transform: translate3d(0, 0);
-    }
-    .cloud2 {
-      position: absolute;
-      top: 5%;
-      animation: cloudTwo 120s cubic-bezier(.28,.54,.69,.38) infinite;
-      transform: translate3d(0, 0);
-    }
-    .cloud3 {
-      position: absolute;
-      top: 37%;
-      animation: cloudTwo 50s cubic-bezier(.28,.54,.69,.38) infinite;
-      transform: translate3d(0, 0);
-    }
-    .cloud4 {
-      position: absolute;
-      top: 65%;
-      animation: cloudTwo 40s cubic-bezier(.28,.54,.69,.38) infinite;
-      transform: translate3d(0, 0);
-    }
+  > .title {
+    font-size: 30px;
+    color: $theme-color;
   }
 }
 
-@keyframes cloudOne {
-  0% { left: -408px; }
-  100% { left: calc(100% + 408px); }
-}
-@keyframes cloudTwo {
-  0% { left: -702px; }
-  100% { left: calc(100% + 351px); }
-}
-@keyframes cloudThree {
-  0% { left: -604px; }
-  100% { left: calc(100% + 302px); }
-}
-@keyframes cloudFour {
-  0% { left: -130px; }
-  100% { left: calc(100% + 130px); }
-}
+@import 'nav';
+@import 'index';
+
+
+@import url(https://fonts.googleapis.com/css?family=Maven+Pro:700|Pacifico);
